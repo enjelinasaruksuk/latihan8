@@ -10,6 +10,10 @@ const User = {
         db.query('SELECT * FROM users WHERE id = ?', [id], callback);
     },
 
+    findByEmail: (email, callback) => {
+        db.query('SELECT * FROM users WHERE email = ?', [email], callback);
+    },
+
     create: (data, callback) => {
         db.query('INSERT INTO users (name, email) VALUES (?, ?)', [data.name, data.email], callback);
     },
